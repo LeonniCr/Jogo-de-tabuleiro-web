@@ -19,20 +19,23 @@ if (isset($_POST['eventos'])) {
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Tabuleiro com Eventos Escolhidos</title>
+  <title>Tabuleiro com Eventos</title>
   <link rel="stylesheet" href="./tb.css">
 </head>
 <body>
 
-  <h2>Tabuleiro com Eventos</h2>
-
-  <div id="board"></div>
-
-  <div id="controls">
-    <button id="roll">Jogar dado</button>
-    <span>Dado: <span id="dice">-</span></span>
-    <span>Vez: <span id="turn">1</span></span>
+  <div id="game-container">
+  <!-- Scroll lateral -->
+  <div id="board-wrapper">
+    <img src="imageTabuleiro/tabuleiro.png" alt="Tabuleiro" id="board-bg">
+    <div id="board"></div>
   </div>
+
+  <!-- Onda fixa embaixo -->
+  <div id="wave">
+    <img src="imageTabuleiro/onda.png" alt="Onda" id="wave-img">
+  </div>
+</div>
 
   <script>
     const eventos = <?php echo json_encode($eventosSelecionados, JSON_UNESCAPED_UNICODE); ?>;
@@ -40,3 +43,4 @@ if (isset($_POST['eventos'])) {
   <script src="./tb.js"></script>
 </body>
 </html>
+
